@@ -32,7 +32,9 @@ const Students = () => {
                 <td>{item.Course}</td>
                 <td>{item.Batch}</td>
                 <td>
-                  <Link to="/students">Edit</Link>
+                  <Link state={{ data: index }} to="/edit-student">
+                    Edit
+                  </Link>
                 </td>
               </tr>
             );

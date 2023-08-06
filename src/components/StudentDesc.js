@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import StoreData from "./Store";
 import { useNavigate } from "react-router-dom";
+import "./StudentDesc.css";
 
 const StudentDesc = () => {
   const navi = useNavigate();
@@ -20,54 +21,84 @@ const StudentDesc = () => {
     ContextData.stuname.push(newStud);
     navi("/students");
   };
+  const cancelClick = () => {
+    navi("/students");
+  };
   return (
     <div className="body-container">
-      <>
-        <form>
-          <label htmlFor="name">Name </label>
-          <input
-            id="name"
-            type="text"
-            placeholder="Name"
-            name="Name"
-            // value={this.state.Name}
-            onChange={changeHandle}
-            required
-          />
+      <form>
+        <div className="form-row">
+          <div className="form-input">
+            <label htmlFor="name" className="form-label">
+              Name{" "}
+            </label>
+            <input
+              id="name"
+              type="text"
+              placeholder="Name"
+              name="Name"
+              className="form-field"
+              // value={this.state.Name}
+              onChange={changeHandle}
+            />
+          </div>
           <br />
-          <label htmlFor="age">Age </label>
-          <input
-            id="age"
-            type="text"
-            placeholder="Age"
-            name="Age"
-            // value={this.state.Dept}
-            onChange={changeHandle}
-            required
-          />
+          <div className="form-input">
+            <label htmlFor="age" className="form-label">
+              Age{" "}
+            </label>
+            <input
+              id="age"
+              type="text"
+              placeholder="Age"
+              name="Age"
+              className="form-field"
+              // value={this.state.Dept}
+              onChange={changeHandle}
+            />
+          </div>
           <br />
-          <label htmlFor="course">Course </label>
-          <input
-            id="course"
-            type="text"
-            placeholder="Course"
-            name="Course"
-            // value={this.state.Rating}
-            onChange={changeHandle}
-            required
-          />
+        </div>
+        <div className="form-row">
+          <div className="form-input">
+            <label htmlFor="course" className="form-label">
+              Course{" "}
+            </label>
+            <input
+              id="course"
+              type="text"
+              placeholder="Course"
+              name="Course"
+              className="form-field"
+              // value={this.state.Rating}
+              onChange={changeHandle}
+            />
+          </div>
           <br />
-          <label htmlFor="batch">Batch </label>
-          <input
-            id="batch"
-            type="text"
-            placeholder="Batch"
-            name="Batch"
-            // value={this.state.Rating}
-            onChange={changeHandle}
-            required
-          />
+          <div className="form-input">
+            <label htmlFor="batch" className="form-label">
+              Batch{" "}
+            </label>
+            <input
+              id="batch"
+              type="text"
+              placeholder="Batch"
+              name="Batch"
+              className="form-field"
+              // value={this.state.Rating}
+              onChange={changeHandle}
+            />
+          </div>
           <br />
+        </div>
+        <div className="form-actions">
+          <button
+            className="css-button-neumorphic"
+            onClick={cancelClick}
+            type="button"
+          >
+            Cancel
+          </button>
           <button
             className="css-button-neumorphic"
             onClick={clickHandle}
@@ -75,8 +106,8 @@ const StudentDesc = () => {
           >
             Submit
           </button>
-        </form>
-      </>
+        </div>
+      </form>
     </div>
   );
 };

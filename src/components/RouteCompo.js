@@ -5,6 +5,7 @@ import Home from "./Home";
 import Contact from "./Contact";
 import StoreData from "./Store";
 import StudentDesc from "./StudentDesc";
+import EditStudent from "./EditStudent";
 
 function RouteCompo() {
   const [data, setData] = useState([
@@ -57,6 +58,14 @@ function RouteCompo() {
           element={
             <StoreData.Provider value={{ stuname: data, updateStu: setData }}>
               <StudentDesc />
+            </StoreData.Provider>
+          }
+        />
+        <Route
+          path="/edit-student"
+          element={
+            <StoreData.Provider value={{ stuname: data, updateStu: setData }}>
+              <EditStudent />
             </StoreData.Provider>
           }
         />
